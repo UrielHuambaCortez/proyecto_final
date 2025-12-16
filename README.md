@@ -84,6 +84,18 @@ datos_deforestacion = [
     "La deforestación amenaza a más de un millón de especies animales y vegetales.",
 ]
 
+def get_biodiversidad_image_url():
+
+    return "https://loremflickr.com/800/600/biodiversity,nature,wildlife"
+
+@bot.command('biodiversidad')
+async def imagen_biodiversidad(ctx):
+
+    image_url = get_biodiversidad_image_url()
+    await ctx.send(image_url)
+
+
+
 
 @bot.event
 async def on_ready():
@@ -126,7 +138,8 @@ async def info(ctx):
         "**$frase** → Envía una frase inspiradora sobre la naturaleza.\n"
         "**$animal** → Muestra una curiosidad interesante sobre un animal.\n"
         "**$contaminacion** → Envía un dato sobre contaminación ambiental.\n"
-        "**$deforestacion** → Muestra información sobre la deforestación en el mundo.\n\n"
+        "**$deforestacion** → Muestra información sobre la deforestación en el mundo.\n"
+        "**$biodiversidad** → Muestra una imagen de una mariposa.\n\n"
         "🌿 **Usa estos comandos para aprender, inspirarte y cuidar el planeta.**"
     )
 
